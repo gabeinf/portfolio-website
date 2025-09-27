@@ -1,5 +1,4 @@
 import "./App.css";
-import { useEffect } from "react";
 
 import { motion, type Variants } from "framer-motion";
 
@@ -37,18 +36,6 @@ import bullyThumb from "./assets/Bully.jpg";
 import overAndOverThumb from "./assets/Over and Over.jpg";
 import notADrillThumb from "./assets/Not a Drill.jpg";
 import Header from "./components/Header";
-
-
-
-
-
-const listVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.06, delayChildren: 0.08 }
-  }
-};
 
 
 const cardVariants: Variants = {
