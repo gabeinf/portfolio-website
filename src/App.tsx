@@ -28,7 +28,7 @@ import tenThirtyNineThumb from "./assets/1039.jpg";
 import burntThumb from "./assets/burnt.jpg";
 import richJunkiesThumb from "./assets/Rich Junkies.jpg";
 import getMoneyLawyerThumb from "./assets/Get Money Good Lawyer.jpg";
-import threeAmVegasThumb from "./assets/3 AM in Vegas.jpg";
+import threeAmVegasThumb from "./assets/3-AM-in-Vegas.jpg";
 import blackOpsThumb from "./assets/Black Ops.jpg";
 import boxedInThumb from "./assets/Boxed In.jpg";
 import tryMeThumb from "./assets/Try Me.jpg";
