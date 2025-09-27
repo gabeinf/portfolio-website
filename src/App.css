@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+  overflow-y: auto;
+}
+
+.portfolio {
+  width: 100%;
+  max-width: 900px;
+  padding-top: 150px;
+}
+
+.title {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 10rem;
+  color: #444;
+}
+
+.video-list {
+  width: 100%;
+}
+
+.video-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #e5e5e5;
+  text-decoration: none;
+  color: inherit;
+
+  will-change: transform, opacity, background-color, color;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-card h2 {
+  font-size: 1.8rem;
+  color: #878787;
+  font-weight: 500;
+  margin: 0;
+  text-align: left;
+  padding: 15px 0;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-card:hover {
+  background-color: #f9f9f9;
+}
+
+.video-card:hover h2 {
+  color: #000;
+}
+
+.thumbnail {
+  width: 125px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  padding: 20px 0;
+}
+
+a {
+  text-decoration: underline;
+  color: #444;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .video-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .thumbnail {
+    width: 70%;
+    max-width: 200px;
+    margin-top: 0.5rem;
+  }
+}

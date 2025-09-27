@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1000;
+  text-align: center;
+}
+
+.header .title {
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.header .title a {
+  color: inherit;
+  text-decoration: underline;
+}
