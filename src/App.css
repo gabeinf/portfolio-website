@@ -68,6 +68,27 @@ a {
   display: flex;
   align-items: baseline;
 }
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  text-align: center;
+  color: #444;
+  gap: 0.5rem;
+}
+
+.empty-state h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
 
 /* @media (max-width: 768px) {
   .video-card {

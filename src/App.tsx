@@ -1,4 +1,7 @@
 import "./App.css";
+import { useState } from 'react';
+
+import Header from "./components/Header";
 
 import takeOverMeThumb from "./assets/TakeOverMe.jpg";
 import gettinMoneyThumb from "./assets/Gettin Money.jpg";
@@ -33,74 +36,83 @@ import tryMeThumb from "./assets/Try Me.jpg";
 import bullyThumb from "./assets/Bully.jpg";
 import overAndOverThumb from "./assets/Over and Over.jpg";
 import notADrillThumb from "./assets/Not a Drill.jpg";
-import Header from "./components/Header";
-import { useState } from 'react'
-
 
 const videos = [
-  { title: "Take Over Me", url: "https://www.youtube.com/watch?v=GsMcb9s7a5c", thumbnail: takeOverMeThumb, category: ['2d, '] },
-  { title: "Gettin Money", url: "https://www.youtube.com/watch?v=CWEgvwp8-bY", thumbnail: gettinMoneyThumb, category: ['2d, '] },
-  { title: "Mirror", url: "https://www.youtube.com/watch?v=0TWzIGxMDOo", thumbnail: mirrorThumb, category: ['2d, '] },
-  { title: "Off The Wall", url: "https://www.youtube.com/watch?v=267rmwgXhOM", thumbnail: offTheWallThumb, category: ['2d, '] },
-  { title: "Mob", url: "https://www.youtube.com/watch?v=bpGRI8oQ5Do", thumbnail: mobThumb, category: ['2d, '] },
-  { title: "The Code", url: "https://www.youtube.com/watch?v=eAGe5NeF-Ew", thumbnail: theCodeThumb, category: ['2d, '] },
-  { title: "Risk Takers", url: "https://www.youtube.com/watch?v=YTyBiGGuA2o", thumbnail: riskTakersThumb, category: ['2d, '] },
-  { title: "Smoking Dope", url: "https://www.youtube.com/watch?v=JvavUcYCTK0", thumbnail: smokingDopeThumb, category: ['2d, '] },
-  { title: "Cullinan", url: "https://www.youtube.com/watch?v=dkrruNz3YD4", thumbnail: cullinanThumb, category: ['2d, '] },
-  { title: "Still Serious", url: "https://www.youtube.com/watch?v=ag6uU1w_pKM", thumbnail: stillSeriousThumb, category: ['2d, '] },
-  { title: "Both Ways", url: "https://www.youtube.com/watch?v=uGbB7hwGgDI", thumbnail: bothWaysThumb, category: ['2d, '] },
-  { title: "Rich N****s", url: "https://www.youtube.com/watch?v=o349okKZU3E", thumbnail: richThumb, category: ['2d, '] },
-  { title: "M's and Bankrolls", url: "https://www.youtube.com/watch?v=lJwcANqnG6o", thumbnail: msBankrollsThumb, category: ['2d, '] },
-  { title: "2 Up", url: "https://www.youtube.com/watch?v=x_FfkWPDlLc", thumbnail: twoUpThumb, category: ['2d, '] },
-  { title: "Healthy", url: "https://www.youtube.com/watch?v=I-lsqBTpLms", thumbnail: healthyThumb, category: ['2d, '] },
-  { title: "Come On", url: "https://www.youtube.com/watch?v=WB1V4WWZxAc", thumbnail: comeOnThumb, category: ['2d, '] },
-  { title: "Bloody Tears", url: "https://www.youtube.com/watch?v=C-xWZO6-t-g", thumbnail: bloodyTearsThumb, category: ['2d, '] },
-  { title: "Well Connected", url: "https://www.youtube.com/watch?v=GZm_nctXqVQ", thumbnail: wellConnectedThumb, category: ['2d, '] },
-  { title: "No Love Lost", url: "https://www.youtube.com/watch?v=ryXC0tDPsxM", thumbnail: noLoveLostThumb, category: ['2d, '] },
-  { title: "Karma", url: "https://www.youtube.com/watch?v=gvtGuXHPLgU", thumbnail: karmaThumb, category: ['2d, '] },
-  { title: "So Fresh", url: "https://www.youtube.com/watch?v=pWVD3kzMJr4", thumbnail: soFreshThumb, category: ['2d, '] },
-  { title: "Blessed", url: "https://www.youtube.com/watch?v=CEQgRl3wyP8", thumbnail: blessedThumb, category: ['2d, '] },
-  { title: "10:39", url: "https://www.youtube.com/watch?v=blKERX5D9RI", thumbnail: tenThirtyNineThumb, category: ['2d, '] },
-  { title: "Rich Junkies", url: "https://www.youtube.com/watch?v=R697KepMzmA", thumbnail: richJunkiesThumb, category: ['2d, '] },
-  { title: "Get Money Good Lawyer", url: "https://www.youtube.com/watch?v=2kcG2pVfLlA", thumbnail: getMoneyLawyerThumb, category: ['2d, '] },
-  { title: "3 AM in Vegas", url: "https://www.youtube.com/watch?v=RMLQA9xlmOw", thumbnail: threeAmVegasThumb, category: ['2d, '] },
-  { title: "Black Ops", url: "https://www.youtube.com/watch?v=IoXmFVgQrLw", thumbnail: blackOpsThumb, category: ['2d, '] },
-  { title: "Boxed In", url: "https://www.youtube.com/watch?v=io2NYye2RN4", thumbnail: boxedInThumb, category: ['2d, '] },
-  { title: "Boxed In", url: "https://www.youtube.com/watch?v=gUaeD9N8bic", thumbnail: burntThumb, category: ['2d, '] },
-  { title: "Try Me", url: "https://www.youtube.com/watch?v=H0EpcypycUM", thumbnail: tryMeThumb, category: ['2d, '] },
-  { title: "Bully", url: "https://www.youtube.com/watch?v=Y5F8r9nyqk0", thumbnail: bullyThumb, category: ['2d, '] },
-  { title: "Over and Over", url: "https://www.youtube.com/watch?v=ZlhAl7rB2kg", thumbnail: overAndOverThumb, category: ['2d, '] },
-  { title: "Not a Drill", url: "https://www.youtube.com/watch?v=PGEga5c3FkY", thumbnail: notADrillThumb, category: ['2d, '] },
+  { title: "Take Over Me", url: "https://www.youtube.com/watch?v=GsMcb9s7a5c", thumbnail: takeOverMeThumb, category: ['2D'] },
+  { title: "Gettin Money", url: "https://www.youtube.com/watch?v=CWEgvwp8-bY", thumbnail: gettinMoneyThumb, category: ['2D'] },
+  { title: "Mirror", url: "https://www.youtube.com/watch?v=0TWzIGxMDOo", thumbnail: mirrorThumb, category: ['2D'] },
+  { title: "Off The Wall", url: "https://www.youtube.com/watch?v=267rmwgXhOM", thumbnail: offTheWallThumb, category: ['2D'] },
+  { title: "Mob", url: "https://www.youtube.com/watch?v=bpGRI8oQ5Do", thumbnail: mobThumb, category: ['2D'] },
+  { title: "The Code", url: "https://www.youtube.com/watch?v=eAGe5NeF-Ew", thumbnail: theCodeThumb, category: ['2D'] },
+  { title: "Risk Takers", url: "https://www.youtube.com/watch?v=YTyBiGGuA2o", thumbnail: riskTakersThumb, category: ['2D'] },
+  { title: "Smoking Dope", url: "https://www.youtube.com/watch?v=JvavUcYCTK0", thumbnail: smokingDopeThumb, category: ['2D'] },
+  { title: "Cullinan", url: "https://www.youtube.com/watch?v=dkrruNz3YD4", thumbnail: cullinanThumb, category: ['2D'] },
+  { title: "Still Serious", url: "https://www.youtube.com/watch?v=ag6uU1w_pKM", thumbnail: stillSeriousThumb, category: ['2D'] },
+  { title: "Both Ways", url: "https://www.youtube.com/watch?v=uGbB7hwGgDI", thumbnail: bothWaysThumb, category: ['2D'] },
+  { title: "Rich N****s", url: "https://www.youtube.com/watch?v=o349okKZU3E", thumbnail: richThumb, category: ['2D'] },
+  { title: "M's and Bankrolls", url: "https://www.youtube.com/watch?v=lJwcANqnG6o", thumbnail: msBankrollsThumb, category: ['2D'] },
+  { title: "2 Up", url: "https://www.youtube.com/watch?v=x_FfkWPDlLc", thumbnail: twoUpThumb, category: ['2D'] },
+  { title: "Healthy", url: "https://www.youtube.com/watch?v=I-lsqBTpLms", thumbnail: healthyThumb, category: ['2D'] },
+  { title: "Come On", url: "https://www.youtube.com/watch?v=WB1V4WWZxAc", thumbnail: comeOnThumb, category: ['2D'] },
+  { title: "Bloody Tears", url: "https://www.youtube.com/watch?v=C-xWZO6-t-g", thumbnail: bloodyTearsThumb, category: ['2D'] },
+  { title: "Well Connected", url: "https://www.youtube.com/watch?v=GZm_nctXqVQ", thumbnail: wellConnectedThumb, category: ['2D'] },
+  { title: "No Love Lost", url: "https://www.youtube.com/watch?v=ryXC0tDPsxM", thumbnail: noLoveLostThumb, category: ['2D'] },
+  { title: "Karma", url: "https://www.youtube.com/watch?v=gvtGuXHPLgU", thumbnail: karmaThumb, category: ['2D'] },
+  { title: "So Fresh", url: "https://www.youtube.com/watch?v=pWVD3kzMJr4", thumbnail: soFreshThumb, category: ['2D'] },
+  { title: "Blessed", url: "https://www.youtube.com/watch?v=CEQgRl3wyP8", thumbnail: blessedThumb, category: ['2D'] },
+  { title: "10:39", url: "https://www.youtube.com/watch?v=blKERX5D9RI", thumbnail: tenThirtyNineThumb, category: ['2D'] },
+  { title: "Burnt", url: "https://www.youtube.com/watch?v=gUaeD9N8bic", thumbnail: burntThumb, category: ['2D'] },
+  { title: "Rich Junkies", url: "https://www.youtube.com/watch?v=R697KepMzmA", thumbnail: richJunkiesThumb, category: ['2D'] },
+  { title: "Get Money Good Lawyer", url: "https://www.youtube.com/watch?v=2kcG2pVfLlA", thumbnail: getMoneyLawyerThumb, category: ['2D'] },
+  { title: "3 AM in Vegas", url: "https://www.youtube.com/watch?v=RMLQA9xlmOw", thumbnail: threeAmVegasThumb, category: ['2D'] },
+  { title: "Black Ops", url: "https://www.youtube.com/watch?v=IoXmFVgQrLw", thumbnail: blackOpsThumb, category: ['2D'] },
+  { title: "Boxed In", url: "https://www.youtube.com/watch?v=io2NYye2RN4", thumbnail: boxedInThumb, category: ['2D'] },
+  { title: "Try Me", url: "https://www.youtube.com/watch?v=H0EpcypycUM", thumbnail: tryMeThumb, category: ['2D'] },
+  { title: "Bully", url: "https://www.youtube.com/watch?v=Y5F8r9nyqk0", thumbnail: bullyThumb, category: ['2D'] },
+  { title: "Over and Over", url: "https://www.youtube.com/watch?v=ZlhAl7rB2kg", thumbnail: overAndOverThumb, category: ['2D'] },
+  { title: "Not a Drill", url: "https://www.youtube.com/watch?v=PGEga5c3FkY", thumbnail: notADrillThumb, category: ['2D'] },
 ];
 
-
 function App() {
-
-  const[ selectedCategory, setSelectedCategory] = useState('Everything');
+  const [selectedCategory, setSelectedCategory] = useState('Everything');
 
   const filteredVideos =
-  selectedCategory === "Everything"
-    ? videos
-    : videos.filter(video => video.category === selectedCategory);
+    selectedCategory === 'Everything'
+      ? videos
+      : videos.filter(video => video.category.includes(selectedCategory));
+
+  const hasVideos = filteredVideos.length > 0;
 
   return (
     <div className="portfolio">
-      
-      <Header />
+      <Header onCategoryChange={setSelectedCategory} />
 
-      <div className="video-list">
-        {filteredVideos.map((video, idx) => (
-          <div className="video-item">
-         <a href={video.url} key={idx}>
-            <img src={video.thumbnail} alt={video.title} className="thumbnail" />
-            <div className="video-info">
-              <h2>{video.title}</h2>
+      {hasVideos ? (
+        <div className="video-list">
+          {filteredVideos.map((video, idx) => (
+            <div className="video-item" key={idx}>
+              <a href={video.url}>
+                <img 
+                  src={video.thumbnail} 
+                  alt={video.title} 
+                  className="thumbnail" 
+                  loading="lazy"
+                />
+                <div className="video-info">
+                  <h2>{video.title}</h2>
+                </div>
+              </a>
             </div>
-          </a>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="empty-state">
+          <h2>Organizing In Progress!...</h2>
+          <p>New projects are in the works, Stay tuned!</p>
+        </div>
+      )}
     </div>
   );
 }
+
 export default App;

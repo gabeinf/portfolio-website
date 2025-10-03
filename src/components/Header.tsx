@@ -3,47 +3,55 @@ import pfp from '../assets/gabeinf.jpg'
 import search from '../assets/search.png'
 import hamburger from '../assets/hamburger.png'
 
-function Header() {
-  
+// Define prop types for TypeScript (safe even if using plain JS)
+interface HeaderProps {
+  onCategoryChange: (category: string) => void;
+}
+
+function Header({ onCategoryChange }: HeaderProps) {
   return (
     <>
-    <div className='header'>
-    <div className="headerContainer">
-    <div>
-      <img className='pfp' src={pfp} alt="" />
-    </div>
+      {/* Top header section */}
+      <div className='header'>
+        <div className="headerContainer">
+          <div>
+            <img className='pfp' src={pfp} alt="Profile" />
+          </div>
+
           <div className='links'>
             <a href="https://www.instagram.com/gabeinf/">Work</a>
             <a href="https://www.instagram.com/gabeinf/">About</a>
-            <a href="https://www.instagram.com/gabeinf/"><img src={search} alt="" /></a>
-            <a href="https://www.instagram.com/gabeinf/"><img src={hamburger} alt="" /></a>
+            <a href="https://www.instagram.com/gabeinf/">
+              <img src={search} alt="Search" />
+            </a>
+            <a href="https://www.instagram.com/gabeinf/">
+              <img src={hamburger} alt="Menu" />
+            </a>
           </div>
-          </div>
+        </div>
       </div>
 
-  <div className='bottomHeader'>
-    
-    <div className='sectionOne'>
-      <a>Everything</a> 
-      <a>2D</a>
-      <a>3D</a>
-    </div>
+      {/* Bottom filter section */}
+      <div className='bottomHeader'>
+        <div className='sectionOne'>
+          <a onClick={() => onCategoryChange('Everything')}>Everything</a> 
+          <a onClick={() => onCategoryChange('2D')}>2D</a>
+          <a onClick={() => onCategoryChange('3D')}>3D</a>
+        </div>
 
-     <div className='sectionTwo'>
-      <a>Motion Graphics</a>
-      <a>Titles</a>
-      <a>Event</a>
-    </div>
+        <div className='sectionTwo'>
+          <a onClick={() => onCategoryChange('Motion Graphics')}>Motion Graphics</a>
+          <a onClick={() => onCategoryChange('Titles')}>Titles</a>
+          <a onClick={() => onCategoryChange('Event')}>Event</a>
+        </div>
 
-     <div className='sectionThree'>
-      <a>Character</a>
-      <a>Movie</a>
-      <a>Experience</a>
-    </div>
-
+        <div className='sectionThree'>
+          <a onClick={() => onCategoryChange('Character')}>Character</a>
+          <a onClick={() => onCategoryChange('Movie')}>Movie</a>
+          <a onClick={() => onCategoryChange('Experience')}>Experience</a>
+        </div>
       </div>
-      </>
-
+    </>
   )
 }
 
