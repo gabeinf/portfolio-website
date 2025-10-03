@@ -30,60 +30,28 @@ html {
 
 .portfolio {
   width: 100%;
-  max-width: 900px;
-  padding-top: 150px;
-}
-
-.title {
-  text-align: center;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 10rem;
-  color: #444;
 }
 
 .video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); /* fluid columns */
+  gap: 20px;
+  padding: 0 60px;
+}
+
+.video-item {
   width: 100%;
+  margin: 0 auto; /* center */
+  text-align: center;
+  
 }
 
-.video-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid #e5e5e5;
-  text-decoration: none;
-  color: inherit;
-
-  will-change: transform, opacity, background-color, color;
-  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.video-card h2 {
-  font-size: 1.8rem;
-  color: #878787;
-  font-weight: 500;
-  margin: 0;
-  text-align: left;
-  padding: 15px 0;
-  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.video-card:hover {
-  background-color: #f9f9f9;
-}
-
-.video-card:hover h2 {
-  color: #000;
-}
 
 .thumbnail {
-  width: 125px;
-  height: auto;
-  border-radius: 4px;
+  width: 100%; /* fill parent */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  padding: 20px 0;
+  display: block;
 }
 
 a {
@@ -92,7 +60,16 @@ a {
   font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
+.video-info h2 {
+  position: relative;
+  color: black;
+  font-weight: 100;
+  font-size: 18px;
+  display: flex;
+  align-items: baseline;
+}
+
+/* @media (max-width: 768px) {
   .video-card {
     flex-direction: column;
     align-items: center;
@@ -104,4 +81,4 @@ a {
     max-width: 200px;
     margin-top: 0.5rem;
   }
-}
+} */

@@ -1,11 +1,16 @@
 .header {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: #fff;
   z-index: 1000;
   text-align: center;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
 }
 
 .header .title {
@@ -17,5 +22,47 @@
 
 .header .title a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.pfp {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.links a {
+  font-weight: 100;
+}
+
+.links a img {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+a {
+  font-size: 18px;
+}
+
+.bottomHeader {
+  display: flex;
+  justify-content: baseline;
+  gap: 115px;
+  padding: 40px 60px;
+}
+
+.bottomHeader a {
+  display: block;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
