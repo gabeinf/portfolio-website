@@ -41,14 +41,8 @@ function Header({ onCategoryChange }: HeaderProps) {
 
         <div className='sectionTwo'>
           <a onClick={() => onCategoryChange('Motion Graphics')}>Motion Graphics</a>
-          <a onClick={() => onCategoryChange('Titles')}>Titles</a>
-          <a onClick={() => onCategoryChange('Event')}>Event</a>
-        </div>
-
-        <div className='sectionThree'>
-          <a onClick={() => onCategoryChange('Character')}>Character</a>
+          <a onClick={() => onCategoryChange('Mixed Media')}>Mixed Media</a>
           <a onClick={() => onCategoryChange('Movie')}>Movie</a>
-          <a onClick={() => onCategoryChange('Experience')}>Experience</a>
         </div>
       </div>
     </>

@@ -13,17 +13,6 @@
   padding: 20px 60px;
 }
 
-.header .title {
-  margin: 0.5rem 0;
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #444;
-}
-
-.header .title a {
-  color: inherit;
-  text-decoration: none;
-}
 
 .pfp {
   max-width: 100px;
@@ -37,7 +26,8 @@
 }
 
 .links a {
-  font-weight: 100;
+  font-weight: 200;
+  color: black;
 }
 
 .links a img {
@@ -58,8 +48,9 @@ a {
 
 .bottomHeader a {
   display: block;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 16px;
+  color: black;
 }
 
 a {
