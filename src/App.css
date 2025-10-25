@@ -1,105 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-body,
-html {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  width: 100%;
-  min-height: 100%;
-  font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth;
-}
-
-#root {
+.app {
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background: #fff;
-  overflow-y: auto;
 }
 
-.portfolio {
-  width: 100%;
-}
-
-.video-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* fluid columns */
-  gap: 20px;
-  padding: 0 60px;
-}
-
-.video-item {
-  width: 100%;
-  margin: 0 auto; /* center */
-  text-align: center;
-  
-}
-
-
-.thumbnail {
-  width: 100%; /* fill parent */
-  aspect-ratio: 4 /4.5;
-  object-fit: cover;
-  display: block;
-}
-
-a {
-  text-decoration: underline;
-  color: #444;
-  font-size: 1.5rem;
-}
-
-.video-info h2 {
+.main-content {
   position: relative;
-  color: black;
-  font-weight: 400;
-  font-size: 18px;
-  display: flex;
-  align-items: baseline;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
 }
-.empty-state {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh;
-  text-align: center;
-  color: #444;
-  gap: 0.5rem;
-}
-
-.empty-state h2 {
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin: 0;
-}
-
-.empty-state p {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-/* @media (max-width: 768px) {
-  .video-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .thumbnail {
-    width: 70%;
-    max-width: 200px;
-    margin-top: 0.5rem;
-  }
-} */

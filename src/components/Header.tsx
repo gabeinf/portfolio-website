@@ -1,52 +1,53 @@
-import '../styles/Header.css'
-import pfp from '../assets/gabeinf.jpg'
-import search from '../assets/search.png'
-import hamburger from '../assets/hamburger.png'
+import { Link, useLocation } from 'react-router-dom';
+import '../styles/Header.css';
+import pfp from '../assets/gabeinf.jpg';
 
-// Define prop types for TypeScript (safe even if using plain JS)
-interface HeaderProps {
-  onCategoryChange: (category: string) => void;
-}
+function Header() {
+  const location = useLocation();
 
-function Header({ onCategoryChange }: HeaderProps) {
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
-    <>
-      {/* Top header section */}
-      <div className='header'>
-        <div className="headerContainer">
-          <div>
-            <img className='pfp' src={pfp} alt="Profile" />
-          </div>
+    <header className="header">
+      <div className="header-container">
+        <Link to="/" className="header-logo">
+          <img className="header-pfp" src={pfp} alt="Gabriel Smith" />
+          <span className="header-name">Gabriel Smith</span>
+        </Link>
 
-          <div className='links'>
-            <a href="https://www.instagram.com/gabeinf/">Work</a>
-            <a href="https://www.instagram.com/gabeinf/">About</a>
-            <a href="https://www.instagram.com/gabeinf/">
-              <img src={search} alt="Search" />
-            </a>
-            <a href="https://www.instagram.com/gabeinf/">
-              <img src={hamburger} alt="Menu" />
-            </a>
-          </div>
-        </div>
+        <nav className="header-nav">
+          <Link
+            to="/"
+            className={`nav-link ${isActive('/') ? 'active' : ''}`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/technical"
+            className={`nav-link ${isActive('/technical') ? 'active' : ''}`}
+          >
+            Technical
+          </Link>
+          <Link
+            to="/creative"
+            className={`nav-link ${isActive('/creative') ? 'active' : ''}`}
+          >
+            Creative
+          </Link>
+          <a
+            href="https://www.instagram.com/gabeinf/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link external"
+          >
+            Instagram
+          </a>
+        </nav>
       </div>
-
-      {/* Bottom filter section */}
-      <div className='bottomHeader'>
-        <div className='sectionOne'>
-          <a onClick={() => onCategoryChange('Everything')}>Everything</a> 
-          <a onClick={() => onCategoryChange('2D')}>2D</a>
-          <a onClick={() => onCategoryChange('3D')}>3D</a>
-        </div>
-
-        <div className='sectionTwo'>
-          <a onClick={() => onCategoryChange('Motion Graphics')}>Motion Graphics</a>
-          <a onClick={() => onCategoryChange('Mixed Media')}>Mixed Media</a>
-          <a onClick={() => onCategoryChange('Movie')}>Movie</a>
-        </div>
-      </div>
-    </>
-  )
+    </header>
+  );
 }
 
-export default Header
+export default Header;
