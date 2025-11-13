@@ -1,6 +1,6 @@
 # Gabriel Smith — Personal Portfolio
 
-![Portfolio Screenshot](./screenshot.png)
+![Portfolio Screenshot](src/assets/Portfolio.png)
 
 ## 🔗 Visit the Website  
 **Live Site:** https://gabeinf.com  
