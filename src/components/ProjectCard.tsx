@@ -7,39 +7,39 @@ interface ProjectCardProps {
   slug: string;
   description: string;
   tags: string[];
+  thumbnail?: string;
   index: number;
 }
 
-const ProjectCard = ({ title, slug, description, tags, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, slug, description, tags, thumbnail, index }: ProjectCardProps) => {
   return (
     <motion.div
       className="project-card"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{
-        y: -8,
-        scale: 1.02,
-        transition: { duration: 0.3, ease: "easeOut" }
-      }}
     >
-      <Link to={`/technical/${slug}`} className="project-card-link">
-        <div className="project-card-content">
-          <h3 className="project-card-title">{title}</h3>
-          <p className="project-card-description">{description}</p>
-          <div className="project-card-tags">
-            {tags.map((tag, idx) => (
-              <span key={idx} className="project-tag">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="project-card-footer">
-            <span className="view-case-study">View Case Study</span>
-            <span className="arrow">→</span>
-          </div>
+      {thumbnail && (
+        <Link to={`/technical/${slug}`} className="project-card-thumbnail">
+          <img src={thumbnail} alt={title} />
+        </Link>
+      )}
+      <div className="project-card-content">
+        <h3 className="project-card-title">
+          <Link to={`/technical/${slug}`} className="project-title-link">
+            {title}
+          </Link>
+        </h3>
+        <p className="project-card-description">{description}</p>
+        <div className="project-card-technologies">
+          {tags.map((tag, idx) => (
+            <span key={idx}>
+              {tag}
+              {idx < tags.length - 1 && ' ~ '}
+            </span>
+          ))}
         </div>
-      </Link>
+      </div>
     </motion.div>
   );
 };

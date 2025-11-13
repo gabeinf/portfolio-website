@@ -15,10 +15,10 @@
   gap: 8px;
   padding: 12px 24px;
   margin-bottom: 40px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  color: #ffffff;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -27,8 +27,8 @@
 }
 
 .back-button:hover {
-  background: rgba(168, 85, 247, 0.2);
-  border-color: rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.3);
   transform: translateX(-5px);
 }
 
@@ -47,13 +47,13 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin: 0 0 20px 0;
-  color: #ffffff;
+  color: #1a1a1a;
   letter-spacing: -1px;
 }
 
 .case-study-subtitle {
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0 0 30px 0;
   line-height: 1.6;
 }
@@ -67,11 +67,11 @@
 
 .case-study-tag {
   padding: 8px 20px;
-  background: rgba(168, 85, 247, 0.3);
-  border: 1px solid rgba(168, 85, 247, 0.5);
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
   border-radius: 20px;
   font-size: 1rem;
-  color: #ffffff;
+  color: #1a1a1a;
   font-weight: 600;
 }
 
@@ -79,13 +79,39 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
+  margin-bottom: 40px;
+}
+
+.project-link-section {
   margin-bottom: 60px;
+  text-align: center;
+}
+
+.project-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: #a855f7;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+}
+
+.project-link-button:hover {
+  background: #8b5cf6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(168, 85, 247, 0.4);
 }
 
 .detail-card {
   padding: 30px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -103,7 +129,7 @@
 .detail-card p {
   margin: 0;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
@@ -115,19 +141,19 @@
 
 .tech-badge {
   padding: 6px 14px;
-  background: rgba(168, 85, 247, 0.2);
+  background: rgba(168, 85, 247, 0.1);
   border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 12px;
   font-size: 0.9rem;
-  color: #ffffff;
+  color: #1a1a1a;
   font-weight: 500;
 }
 
 .case-study-section {
   margin-bottom: 50px;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -137,7 +163,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0 0 20px 0;
-  color: #ffffff;
+  color: #1a1a1a;
   position: relative;
   padding-bottom: 15px;
 }
@@ -156,7 +182,7 @@
 .section-text {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0;
 }
 
@@ -169,11 +195,11 @@
 .result-item {
   padding: 20px;
   margin-bottom: 15px;
-  background: rgba(168, 85, 247, 0.1);
+  background: rgba(168, 85, 247, 0.08);
   border-left: 4px solid #a855f7;
   border-radius: 8px;
   font-size: 1.1rem;
-  color: #ffffff;
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
@@ -191,7 +217,7 @@
 .gallery-item {
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .gallery-item img {
@@ -219,12 +245,12 @@
 .case-study-cta h2 {
   font-size: 2.5rem;
   margin: 0 0 15px 0;
-  color: #ffffff;
+  color: #1a1a1a;
 }
 
 .case-study-cta p {
   font-size: 1.3rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0 0 30px 0;
 }
 
@@ -239,12 +265,12 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
 }
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(168, 85, 247, 0.5);
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.4);
 }
 
 @media (max-width: 768px) {

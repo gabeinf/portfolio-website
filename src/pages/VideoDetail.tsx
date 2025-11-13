@@ -1,15 +1,35 @@
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getVideoBySlug } from '../data/videos';
 import '../styles/VideoDetail.css';
 
 const VideoDetail = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const video = slug ? getVideoBySlug(slug) : undefined;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
   if (!video) {
-    return <Navigate to="/creative" replace />;
+    return <Navigate to="/" replace />;
   }
+
+  const handleBackClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    navigate('/');
+    setTimeout(() => {
+      const creativeSection = document.getElementById('creative');
+      if (creativeSection) {
+        const headerOffset = 80;
+        const elementPosition = creativeSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   // Extract YouTube video ID if it's a YouTube URL
   const getYouTubeEmbedUrl = (url: string) => {
@@ -32,7 +52,7 @@ const VideoDetail = () => {
         transition={{ duration: 0.6 }}
       >
         {/* Back Button */}
-        <Link to="/creative" className="back-button">
+        <Link to="/#creative" className="back-button" onClick={handleBackClick}>
           ← Back to Creative
         </Link>
 

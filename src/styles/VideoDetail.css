@@ -24,7 +24,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin: 0 0 20px 0;
-  color: #ffffff;
+  color: #1a1a1a;
   letter-spacing: -1px;
 }
 
@@ -37,11 +37,11 @@
 
 .video-category-tag {
   padding: 8px 20px;
-  background: rgba(168, 85, 247, 0.3);
-  border: 1px solid rgba(168, 85, 247, 0.5);
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
   border-radius: 20px;
   font-size: 1rem;
-  color: #ffffff;
+  color: #1a1a1a;
   font-weight: 600;
 }
 
@@ -52,9 +52,9 @@
   margin-bottom: 50px;
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(168, 85, 247, 0.3);
-  box-shadow: 0 12px 48px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 12px 48px rgba(124, 58, 237, 0.15);
 }
 
 .video-player {
@@ -74,7 +74,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0 0 30px 0;
-  color: #ffffff;
+  color: #1a1a1a;
 }
 
 .info-grid {
@@ -85,8 +85,8 @@
 
 .info-card {
   padding: 30px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -104,15 +104,15 @@
 .info-card p {
   margin: 0;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
 .video-description-section {
   margin-bottom: 50px;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -122,7 +122,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0 0 20px 0;
-  color: #ffffff;
+  color: #1a1a1a;
   position: relative;
   padding-bottom: 15px;
 }
@@ -141,7 +141,7 @@
 .description-text {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0;
 }
 
@@ -158,7 +158,7 @@
 .video-cta h2 {
   font-size: 2rem;
   margin: 0 0 25px 0;
-  color: #ffffff;
+  color: #1a1a1a;
 }
 
 .external-link-button {
@@ -172,12 +172,12 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
 }
 
 .external-link-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(168, 85, 247, 0.5);
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.4);
 }
 
 @media (max-width: 768px) {

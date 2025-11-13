@@ -1,15 +1,35 @@
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getProjectBySlug } from '../data/projects';
 import '../styles/CaseStudy.css';
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const project = slug ? getProjectBySlug(slug) : undefined;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
   if (!project) {
-    return <Navigate to="/technical" replace />;
+    return <Navigate to="/" replace />;
   }
+
+  const handleBackClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    navigate('/');
+    setTimeout(() => {
+      const technicalSection = document.getElementById('technical');
+      if (technicalSection) {
+        const headerOffset = 80;
+        const elementPosition = technicalSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   return (
     <div className="case-study">
@@ -20,7 +40,7 @@ const CaseStudy = () => {
         transition={{ duration: 0.6 }}
       >
         {/* Back Button */}
-        <Link to="/technical" className="back-button">
+        <Link to="/#technical" className="back-button" onClick={handleBackClick}>
           ← Back to Technical
         </Link>
 
@@ -58,6 +78,20 @@ const CaseStudy = () => {
             </div>
           </div>
         </div>
+
+        {/* Project Link */}
+        {project.link && (
+          <div className="project-link-section">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link-button"
+            >
+              {project.linkType === 'website' ? '🌐 Visit Website' : '💻 View on GitHub'}
+            </a>
+          </div>
+        )}
 
         {/* Overview Section */}
         <section className="case-study-section">

@@ -19,18 +19,18 @@ const MeshGradient = () => {
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
 
-    // Gradient orbs with purple theme
+    // Gradient orbs with light purple theme
     const orbs = [
-      { x: 0.2, y: 0.2, radius: 0.4, color: '#8b5cf6', vx: 0.0003, vy: 0.0002 },
-      { x: 0.8, y: 0.3, radius: 0.5, color: '#a855f7', vx: -0.0002, vy: 0.0003 },
-      { x: 0.5, y: 0.7, radius: 0.45, color: '#7c3aed', vx: 0.0002, vy: -0.0002 },
-      { x: 0.1, y: 0.8, radius: 0.35, color: '#6d28d9', vx: 0.0004, vy: 0.0001 },
-      { x: 0.9, y: 0.9, radius: 0.4, color: '#5b21b6', vx: -0.0003, vy: -0.0003 },
+      { x: 0.2, y: 0.2, radius: 0.4, color: '#e9d5ff', vx: 0.0003, vy: 0.0002 },
+      { x: 0.8, y: 0.3, radius: 0.5, color: '#d8b4fe', vx: -0.0002, vy: 0.0003 },
+      { x: 0.5, y: 0.7, radius: 0.45, color: '#c084fc', vx: 0.0002, vy: -0.0002 },
+      { x: 0.1, y: 0.8, radius: 0.35, color: '#a855f7', vx: 0.0004, vy: 0.0001 },
+      { x: 0.9, y: 0.9, radius: 0.4, color: '#8b5cf6', vx: -0.0003, vy: -0.0003 },
     ];
 
     const animate = () => {
-      // Clear canvas with black background
-      ctx.fillStyle = '#000000';
+      // Clear canvas with white background
+      ctx.fillStyle = '#ffffff';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw orbs
@@ -57,8 +57,8 @@ const MeshGradient = () => {
           orb.radius * Math.max(canvas.width, canvas.height)
         );
 
-        gradient.addColorStop(0, orb.color + '66'); // 40% opacity
-        gradient.addColorStop(0.5, orb.color + '33'); // 20% opacity
+        gradient.addColorStop(0, orb.color + '99'); // 60% opacity
+        gradient.addColorStop(0.5, orb.color + '4d'); // 30% opacity
         gradient.addColorStop(1, orb.color + '00'); // 0% opacity
 
         // Draw gradient

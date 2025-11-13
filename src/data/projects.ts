@@ -3,6 +3,7 @@ export interface Project {
   slug: string;
   description: string;
   tags: string[];
+  thumbnail?: string;
   overview: string;
   challenge: string;
   solution: string;
@@ -11,15 +12,52 @@ export interface Project {
   role: string;
   timeline: string;
   images?: string[];
+  link?: string;
+  linkType?: 'website' | 'github';
 }
 
 export const projects: Project[] = [
   {
-    title: "RallySphere (Intern)",
+    title: "RallySphere App (Intern)",
     slug: "rallysphere",
     description:
-      "A comprehensive sports management platform for organizing and tracking athletic events.",
+      "A comprehensive sports management mobile application for organizing and tracking athletic events.",
+    tags: ["React Native", "TypeScript", "Mobile Development", "UI/UX"],
+    thumbnail: "/src/assets/RallysphereApp.png",
+    link: "https://github.com/Mjjllolis/rallysphere",
+    linkType: "github",
+    overview:
+      "RallySphere is a modern mobile application designed to streamline sports event management, providing real-time updates, team coordination, and performance analytics.",
+    challenge:
+      "Sports organizations needed an intuitive mobile platform to manage complex tournament schedules, team registrations, and real-time score tracking on the go.",
+    solution:
+      "Developed a React Native mobile application with real-time data synchronization, intuitive mobile interfaces, and cross-platform compatibility to ensure accessibility for coaches, players, and administrators on iOS and Android devices.",
+    results: [
+      "Currently in TestFlight beta testing phase",
+      "Cross-platform compatibility for iOS and Android",
+      "Real-time event synchronization implemented",
+      "Positive feedback from beta testers on usability",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "WebSocket",
+      "Tailwind CSS",
+    ],
+    role: "Full-Stack Developer & UI/UX Designer",
+    timeline: "6 months (Ongoing)",
+  },
+  {
+    title: "RallySphere Website (Intern)",
+    slug: "rallysphere",
+    description:
+      "A comprehensive sports management web platform for organizing and tracking athletic events.",
     tags: ["Web Development", "React", "TypeScript", "UI/UX"],
+    thumbnail: "/src/assets/RallySphere.png",
+    link: "https://www.rallysphere.com/",
+    linkType: "website",
     overview:
       "RallySphere is a modern web application designed to streamline sports event management, providing real-time updates, team coordination, and performance analytics.",
     challenge:
@@ -49,6 +87,9 @@ export const projects: Project[] = [
     description:
       "A Christian faith app designed to help users grow spiritually through guided reflections, prayer prompts, and community connection.",
     tags: ["React", "Firebase", "Tailwind", "FaithTech", "UI/UX"],
+    thumbnail: "/src/assets/Midst.png",
+    link: "https://github.com/gabeinf/Midst",
+    linkType: "github",
     overview:
       "Midst is a minimalist and immersive faith-based application that helps users connect with God through scripture-based meditations, journaling tools, and meaningful community engagement. The app’s atmosphere focuses on calm design, gentle animation, and spiritual mindfulness.",
     challenge:
@@ -77,6 +118,7 @@ export const projects: Project[] = [
     description:
       "An interactive portfolio showcasing 3D visuals, motion graphics, and coding projects.",
     tags: ["React", "Vite", "Three.js", "Framer Motion", "Frontend"],
+    thumbnail: "/src/assets/Portfolio.png",
     overview:
       "A digital portfolio merging motion graphics and code to showcase both creative and technical expertise. The design focuses on smooth transitions, interactive 3D scenes, and clear storytelling.",
     challenge:
@@ -99,32 +141,6 @@ export const projects: Project[] = [
     ],
     role: "Designer & Developer",
     timeline: "2 months",
-  },
-  {
-    title: "Coming Soon",
-    slug: "coming-soon",
-    description:
-      "New project exploring AI-driven motion graphics and VFX automation.",
-    tags: ["In Development", "AI", "VFX", "Creative Coding"],
-    overview:
-      "Currently in early development, this project will merge AI, motion design, and web technology to automate creative effects similar to Adobe After Effects, all built in-browser.",
-    challenge:
-      "Translating complex VFX pipelines into real-time browser processes while maintaining user interactivity.",
-    solution:
-      "Building an experimental application with WebGL shaders, TensorFlow.js, and real-time visual feedback for creative effects generation.",
-    results: [
-      "Prototype stage in progress",
-      "AI motion tracking tests completed",
-    ],
-    technologies: [
-      "React",
-      "TensorFlow.js",
-      "WebGL",
-      "Three.js",
-      "Tailwind CSS",
-    ],
-    role: "Lead Developer & Technical Artist",
-    timeline: "In Development",
   },
 ];
 
