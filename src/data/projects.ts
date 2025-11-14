@@ -1,5 +1,5 @@
 import rallysphereAppThumb from "../assets/RallysphereApp.png";
-import rallysphereThumb from "../assets/RallySphere.png";
+import rallysphereThumb from "../assets/Rallysphere.png";
 import midstThumb from "../assets/Midst.png";
 import portfolioThumb from "../assets/Portfolio.png";
 
