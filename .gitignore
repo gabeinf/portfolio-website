@@ -16,6 +16,10 @@ dist-ssr
 *.tsbuildinfo
 .next
 
+# Compiled TypeScript files in src
+src/**/*.js
+src/**/*.d.ts
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
