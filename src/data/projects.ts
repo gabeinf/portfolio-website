@@ -1,3 +1,8 @@
+import rallysphereAppThumb from "../assets/RallysphereApp.png";
+import rallysphereThumb from "../assets/RallySphere.png";
+import midstThumb from "../assets/Midst.png";
+import portfolioThumb from "../assets/Portfolio.png";
+
 export interface Project {
   title: string;
   slug: string;
@@ -23,7 +28,7 @@ export const projects: Project[] = [
     description:
       "A comprehensive sports management mobile application for organizing and tracking athletic events.",
     tags: ["React Native", "TypeScript", "Mobile Development", "UI/UX"],
-    thumbnail: "/src/assets/RallysphereApp.png",
+    thumbnail: rallysphereAppThumb,
     link: "https://github.com/Mjjllolis/rallysphere",
     linkType: "github",
     overview:
@@ -55,7 +60,7 @@ export const projects: Project[] = [
     description:
       "A comprehensive sports management web platform for organizing and tracking athletic events.",
     tags: ["Web Development", "React", "TypeScript", "UI/UX"],
-    thumbnail: "/src/assets/RallySphere.png",
+    thumbnail: rallysphereThumb,
     link: "https://www.rallysphere.com/",
     linkType: "website",
     overview:
@@ -87,7 +92,7 @@ export const projects: Project[] = [
     description:
       "A Christian faith app designed to help users grow spiritually through guided reflections, prayer prompts, and community connection.",
     tags: ["React", "Firebase", "Tailwind", "FaithTech", "UI/UX"],
-    thumbnail: "/src/assets/Midst.png",
+    thumbnail: midstThumb,
     link: "https://github.com/gabeinf/Midst",
     linkType: "github",
     overview:
@@ -118,7 +123,7 @@ export const projects: Project[] = [
     description:
       "An interactive portfolio showcasing 3D visuals, motion graphics, and coding projects.",
     tags: ["React", "Vite", "Three.js", "Framer Motion", "Frontend"],
-    thumbnail: "/src/assets/Portfolio.png",
+    thumbnail: portfolioThumb,
     overview:
       "A digital portfolio merging motion graphics and code to showcase both creative and technical expertise. The design focuses on smooth transitions, interactive 3D scenes, and clear storytelling.",
     challenge:
